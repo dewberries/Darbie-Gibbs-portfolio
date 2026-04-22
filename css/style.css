@@ -1,263 +1,344 @@
+/***** GLOBAL STYLES *****/
+body {
+  font-family: "Quicksand", sans-serif;
+  background: linear-gradient(180deg, #00171f 0%, #022734 100%);
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+    padding: 40px 0;
+    background: transparent;
+  }
+
+p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+a {
+  color: #00d9ff;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #00ffdd;
+  text-decoration: none;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
+  margin: 30px 0;
+}
+
+.img-responsive {
+  width: 100%;
+  display: block;
+}
+
 /***** NAVBAR *****/
-
-
 .navbar {
-    background-color: #035772;
-    border-radius: 0;
+  background: linear-gradient(90deg, #023047 0%, #035772 50%, #046b8c 100%);
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  padding: 12px 0;
 }
 
-/* Navbar title */
 .navbar-default .navbar-brand {
-    color: white;
-    font-size: px;
-    font-weight: bold;
-    font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.5px;
 }
 
-/* Navbar hover effects */
 .navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:focus {
+  color: #00ffdd;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  padding: 12px 16px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  border-radius: 8px;
+}
+
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #00ffdd;
-    text-decoration: none;
+  color: #00ffdd;
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Navbar links */
-.navbar-default .navbar-nav > li > a {
-    color: #fff;
-    font-size: 16px;
-    font-family: "Space Grotesk", sans-serif;
-    padding: 10px;
-}
-
-/* Navbar collapsed styles */
 .navbar-toggler {
-    color: #fff;
-    border-color: #fff;
-    background-color: #007fc9;
-    border-radius: 4px;
-    border: 1px solid;
-    fill: #fff;
-    font-size: 16px;
-    position: relative;
-    margin-right: 10px;
+  color: #ffffff;
+  border: 1px solid #00d9ff;
+  background-color: transparent;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
 }
 
 .navbar-toggler:hover,
 .navbar-toggler:focus {
-    background-color: #00ffdd;
-    color: #242424;
-    fill: #242424;
-    border-color: #fff;
-
+  background-color: #00ffdd;
+  color: #00171f;
+  border-color: #00ffdd;
 }
 
-/*** JUMBOTRON ***/
-
+/***** JUMBOTRON *****/
 .jumbotron {
-    background-image: url("../assets/techlines.png");
-    text-align: center;
-    color: #fff;
-    padding: 3%;
-    border-radius: 0px;
+  background-image: url("../assets/techlines.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  padding: 60px 20px;
+  border-radius: 0;
+  position: relative;
+}
+
+.jumbotron::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 23, 31, 0.45);
+}
+
+.jumbotron > * {
+  position: relative;
+  z-index: 1;
 }
 
 .jumbotron h2 {
-    font-size: 36px;
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: bold;
+  font-size: 40px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
-.img-responsive{
-    width:100%;
-}
-
-/***Homepage Header***/
-
-
+/***** HOMEPAGE HEADER *****/
 .header-banner {
-    background-image: url('../assets/techlines2.png');
-    background-size: cover;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-family: 'Space Grotesk', sans-serif;
-  }
-  
+  background-image: url("../assets/techlines2.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Space Grotesk", sans-serif;
+  position: relative;
+  padding: 40px 20px;
+}
+
+.header-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 23, 31, 0.55);
+}
+
 .banner-content {
-    display: flex;
-    align-items: center;
-    gap: 200px;
-    padding: 0 20px;
-  }
-  
-  @media (max-width: 768px) {
-    .banner-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 0 20px;
+  max-width: 1200px;
+}
 
 .banner-content h2 {
-    font-size: 32px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+.about-me-text {
+  font-family: "Quicksand", sans-serif;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.8;
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
 .profile-pic {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: 4px solid white;
-    object-fit: cover;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  object-fit: cover;
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.35);
+}
+
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .banner-content h2 {
+    font-size: 32px;
   }
 
   .about-me-text {
-    font-family: "Quicksand", sans-serif;
     text-align: center;
-    font-size: 	16px;
-    font-weight: 500;
-    line-height: 1.6;
+    font-size: 16px;
   }
 
+  .profile-pic {
+    width: 220px;
+    height: 220px;
+  }
+}
 
-
-
-
+.about-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    flex-wrap: wrap;
+  }
   
-
-/*** CARD ***/
-
-
-.card2 {
-    background-color: #235d6e;
-    border-color: #ffffff;
-    border-width: 2px;
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 217, 255, 0.418);
-    overflow: hidden;
-    transition: transform 0.2s ease;
-}
-
-.card2-title {
-    text-align: center;
-}
-
-.card2-info {
-    font-family: "Quicksand", sans-serif;
-    text-align: center;
-    font-size: 	16px;
-    font-weight: 500;
-    line-height: 1.6;
+  .about-buttons .card-button {
+    min-width: 140px;
     text-align: center;
   }
+  
+  @media (max-width: 576px) {
+    .about-buttons {
+      flex-direction: column;
+    }
+  }
 
+/***** CARDS *****/
+.card,
+.card2 {
+  background: linear-gradient(180deg, rgba(35, 93, 110, 0.95) 0%, rgba(22, 67, 83, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 217, 255, 0.18);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
 
-.card-button {
-  background-color: #00171f;
+.card {
+  min-height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #00ffdd;
+  box-shadow: 0 12px 28px rgba(0, 255, 221, 0.2);
+}
+
+.card-img-top {
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.card-title,
+.card2-title {
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.card-info,
+.card2-info {
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 24px;
+}
+
+/***** BUTTONS *****/
+.card-button,
+.card-body a.btn,
+.card-body a {
+  display: inline-block;
+  align-self: center;
+  background: linear-gradient(90deg, #00171f 0%, #023047 100%);
   color: #ffffff;
   border: 1px solid #00d9ff;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-weight: 500;
+  border-radius: 10px;
+  padding: 11px 22px;
+  font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 217, 255, 0.3);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 217, 255, 0.22);
 }
 
-.card-button:hover {
-  background-color: #00ffdd;
+.card-button:hover,
+.card-body a.btn:hover,
+.card-body a:hover {
+  background: #00ffdd;
   color: #00171f;
   border-color: #00ffdd;
   transform: translateY(-2px);
 }
 
-.card {
-    background-color: #235d6e;
-    border-color: #ffffff;
-    border-width: 1px;
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 217, 255, 0.418);
-    overflow: hidden;
-    transition: transform 0.2s ease;
-    height: 575px;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #00ffdd;
-}
-
-.card-title {
-    text-align: center;
-}
-
-.card-info {
-    font-family: "Quicksand", sans-serif;
-    text-align: center;
-    font-size: 	16px;
-    font-weight: 500;
-    line-height: 1.6;
-  }
-
-.card-img-top {
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-  }
-
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .card-body a {
-    align-self: flex-start;
-    background-color: #00171f;
-  }
-
-/*** Basic Text Styles ***/
-
+/***** TEXT SECTIONS *****/
 #about-world {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .resume h3 {
-    font-weight: bold;
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  margin-bottom: 12px;
 }
 
-
-hr {
-    border-color: white;
-    border-width: 2px;
-}
-
-p {
-    font-size: 20px;
-}
-
-a {
-    color: #035772;
-}
-
-a:hover {
-    color: #ebd122;
-}
-
-.container{
-    padding:25px 0;
+html,
+body {
+  min-height: 100%;
 }
 
 body {
+  background: linear-gradient(180deg, #00171f 0%, #022734 100%);
+  background-attachment: fixed;
+}
 
-    font-family: 'Georgia', serif;
-    background-color: #00171f;
-    color: #ffffff;
+main,
+section,
+footer {
+  background: transparent;
+}
+
+footer {
+  color: #ffffff;
+  border: none;
+  box-shadow: none;
 }
